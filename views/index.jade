@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p What else can I do for you?
+  #figureItOut
+    | this is dumb
+
+  script(type="text/javascript").
+    var TryView = Backbone.View.extend({
+        initialize: function(){
+            this.render();
+        },
+        render : function(){
+           this.$el.html('What do you want from me?')
+        }
+    });
+    var newView = new TryView({el: $('#figureItOut')});
+

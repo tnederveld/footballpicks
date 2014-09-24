@@ -1,0 +1,34 @@
+//
+   Created by MannyOrtiz on 9/21/14.
+extends layout
+
+block content
+    form(name="addTeam" id="addTeam" action="")
+        p Team Name :
+            input(type="text" name="name" id="name" value="")
+        p Short Name :
+            input(type="text" name="shortName" id="shortName" value="")
+        p Location :
+            input(type="text" name="location" id="location" value="")
+        p
+            select(name="conference" id="conference")
+                option(value="") Select Conference
+                option(value="AFC") AFC
+                option(value="NFC") NFC
+            select(name="division" id="division")
+                option(value="") Select Division
+                option(value="") Central
+                option(value="") East
+                option(value="") South
+                option(value="") West
+        input(type="submit" name="submit" value="Add Team")
+
+    h1 List of NFL Teams
+    #fixedCase
+
+    script(src='javascripts/nflpicks/index.js')
+    script(src='javascripts/nflpicks/models.js')
+    script.
+        $(function(){
+            NFLPicks.init();
+        })
