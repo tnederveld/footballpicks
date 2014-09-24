@@ -9,7 +9,7 @@ var Team = mongoose.model('Team', schemas.teamSchema);
 
 //get all
 router.get('/', function(req, res, next){
-    var query = Team.find({})
+    var query = Team.find({});
     return query.exec(function(err,teams){
         if(err){console.log(err);}
         res.render('teams');
